@@ -2,6 +2,7 @@ package com.iu.object2;
 
 public class Method3 {
 
+	//sal
 	public void sal(int salary) {
 		System.out.println("월급 계산");
 		System.out.println(salary*0.967);
