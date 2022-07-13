@@ -35,16 +35,16 @@ public class StudentController {
 				break;
 			case 2 :
 				System.out.println("2");
-				studentview.viewAll(students);
+				studentview.view(students);
 				
 				break;
 			case 3 :
 				System.out.println("3");
 				Student student = studentservice.findStudent(students);
 				if(student != null) {
-					studentview.viewOne(student);	
+					studentview.view(student);	
 				}else {
-					studentview.viewMessage("일치하는 학생이 없습니다");
+					studentview.view("일치하는 학생이 없습니다");
 				}
 				
 				break;
