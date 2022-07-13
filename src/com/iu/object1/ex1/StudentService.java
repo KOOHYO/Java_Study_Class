@@ -10,15 +10,13 @@ public class StudentService {
 	//없으면 null을 리턴하세요
 	public Student findStudent(Student [] students) {
 		Scanner sc = new Scanner(System.in);
-		Student student = new Student();
-//		Student [] students = null;
+		Student student = null; //리턴하는 학생 데이터
 		System.out.println("학생 번호를 입력해 주세요");
 		int num = sc.nextInt();
 		for(int i=0; i<students.length; i++) {
-			if(num==students[i].num) {
+			if(num == students[i].num) {
 				student = students[i];
-			}else {
-				student = null;
+				break;
 			}
 		}
 		return student;
