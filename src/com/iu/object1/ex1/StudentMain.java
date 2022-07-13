@@ -8,6 +8,8 @@ public class StudentMain {
 		System.out.println("프로그램 시작");
 		Scanner sc = new Scanner(System.in);
 		//StudentContloller의 start 메서드 호출
+		StudentController stc = new StudentController();
+		stc.stat();
 		
 		System.out.println("프로그램 종료");
 	}

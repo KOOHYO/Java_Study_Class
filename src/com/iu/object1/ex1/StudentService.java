@@ -10,12 +10,13 @@ public class StudentService {
 	//학생들을 리턴
 	public Student [] makeStudents() {
 		Scanner sc = new Scanner(System.in);
-		Student student = new Student();
+		//학생수는 숫자만
 		System.out.println("학생수를 입력하세요");
-		int numbers = sc.nextInt();
-		Student [] students = new Student [numbers];
+		int num = sc.nextInt();
+		Student [] students = new Student [num];
 		
-		for(int i=0; i<numbers; i++) {
+		for(int i=0; i<num; i++) {
+			Student student = new Student();
 			System.out.println("이름을 입력하세요");
 			student.name = sc.next();
 			System.out.println("번호를 입력하세요");
@@ -27,10 +28,8 @@ public class StudentService {
 			System.out.println("수학점수를 입력하세요");
 			student.math = sc.nextInt();
 			student.total = student.kor+student.egl+student.math;
-			System.out.println("총점수는 : "+student.kor+student.egl+student.math);
-			System.out.println("평균는 : "+student.total/3);
+			student.avg = student.total/3;
 			students[i] = student;
-			
 			}
 			return students;
 	}

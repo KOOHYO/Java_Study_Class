@@ -13,6 +13,9 @@ public class StudentController {
 //	System.out.println("6. 학생 정보 종료");
 	public void stat() {
 		Scanner sc = new Scanner(System.in);
+		StudentView studentview = new StudentView();
+		StudentService studentservice = new StudentService();
+		Student [] students = null;//Reference 타입은 초기값 null이다
 		
 		boolean check=true;
 		while(check) {
@@ -22,15 +25,18 @@ public class StudentController {
 			System.out.println("4. 학생 정보 삭제");
 			System.out.println("5. 학생 정보 추가");
 			System.out.println("6. 학생 정보 종료");
+			System.out.println("==============");
 			int select = sc.nextInt();
 			switch(select) {
 			case 1 :
 				System.out.println("1");
-				StudentService studentService = new StudentService();
-				studentService.makeStudents();
+				students = studentservice.makeStudents();//변수 선언
+				
 				break;
 			case 2 :
 				System.out.println("2");
+				studentview.viewAll(students);
+				
 				break;
 			case 3 :
 				System.out.println("3");
