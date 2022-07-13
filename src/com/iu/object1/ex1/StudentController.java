@@ -26,6 +26,8 @@ public class StudentController {
 			switch(select) {
 			case 1 :
 				System.out.println("1");
+				StudentService studentService = new StudentService();
+				studentService.makeStudents();
 				break;
 			case 2 :
 				System.out.println("2");
