@@ -15,6 +15,7 @@ public class StudentController {
 		Scanner sc = new Scanner(System.in);
 		StudentView studentview = new StudentView();
 		StudentService studentservice = new StudentService();
+		Student student = new Student();
 		Student [] students = null;//Reference 타입은 초기값 null이다
 		
 		boolean check=true;
@@ -40,6 +41,10 @@ public class StudentController {
 				break;
 			case 3 :
 				System.out.println("3");
+				studentservice.findStudent(students);
+				studentview.viewOne(student);
+				studentview.viewMessage("일치하는 학생이 없습니다");
+				
 				break;
 			case 4 :
 				System.out.println("4");
