@@ -16,6 +16,7 @@ public class StudentService {
 		for(int i=0; i<students.length; i++) {
 			if(num == students[i].num) {
 				student = students[i];
+				//return student; 이걸 써도 되고 break을 써도 된다
 				break;
 			}
 		}
