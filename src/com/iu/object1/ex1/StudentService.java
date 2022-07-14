@@ -26,20 +26,20 @@ public class StudentService {
 			newstudents[i]=students[i];
 		}
 		
-		Student newstudent = new Student();
+		Student student = new Student();
 			System.out.println("추가할 이름을 입력하세요");
-			newstudent.setName(sc.next());
+			student.setName(sc.next());
 			System.out.println("추가할 번호를 입력하세요");
-			newstudent.setNum(sc.nextInt());
+			student.setNum(sc.nextInt());
 			System.out.println("추가할 국어점수를 입력하세요");
-			newstudent.setKor(sc.nextInt());
+			student.setKor(sc.nextInt());
 			System.out.println("추가할 영어점수를 입력하세요");
-			newstudent.setEgl(sc.nextInt());
+			student.setEgl(sc.nextInt());
 			System.out.println("추가할 수학점수를 입력하세요");
-			newstudent.setMath(sc.nextInt());
-			newstudent.setTotal();
+			student.setMath(sc.nextInt());
+			student.setTotal();
 			
-			newstudents[students.length] = newstudent;
+			newstudents[students.length] = student;
 
 		return newstudents;
 		
