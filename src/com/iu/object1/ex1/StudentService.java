@@ -13,27 +13,26 @@ public class StudentService {
 	//학생들의 정보를 받아서 (기존 모든 정보를 받아서)
 	//학생 한명 추가
 	//학생정보들을 리턴
-	public void addStudent(Student [] students) {
+	public Student [] addStudent(Student [] students) {
 		
 		Student [] studentscp = new Student[students.length+1];
+		Student student = new Student();
 		
 		for(int i=0; i<studentscp.length; i++) {
-			Student student = new Student();
-			
 			System.out.println("추가할 이름을 입력하세요");
-			student.name = sc.next();
+			student.setName(sc.next());
 			System.out.println("추가할 번호를 입력하세요");
-			student.num = sc.nextInt();
+			student.setNum(sc.nextInt());
 			System.out.println("추가할 국어점수를 입력하세요");
-			student.kor = sc.nextInt();
+			student.setKor(sc.nextInt());
 			System.out.println("추가할 영어점수를 입력하세요");
-			student.egl = sc.nextInt();
+			student.setEgl(sc.nextInt());
 			System.out.println("추가할 수학점수를 입력하세요");
-			student.math = sc.nextInt();
+			student.setMath(sc.nextInt());
 			student.setTotal();
-			student.setAvg();
+			studentscp[i]=student;
 		}
-		
+		return studentscp;
 		
 	}
 	
@@ -47,7 +46,7 @@ public class StudentService {
 		System.out.println("학생 번호를 입력해 주세요");
 		int num = sc.nextInt();
 		for(int i=0; i<students.length; i++) {
-			if(num == students[i].num) {
+			if(num == students[i].getNum()) {
 				student = students[i];
 				//return student; 이걸 써도 되고 break을 써도 된다
 				break;
@@ -70,17 +69,16 @@ public class StudentService {
 		for(int i=0; i<num; i++) {
 			Student student = new Student();
 			System.out.println("이름을 입력하세요");
-			student.name = sc.next();
+			student.setName(sc.next());
 			System.out.println("번호를 입력하세요");
-			student.num = sc.nextInt();
+			student.setNum(sc.nextInt());
 			System.out.println("국어점수를 입력하세요");
-			student.kor = sc.nextInt();
+			student.setKor(sc.nextInt());
 			System.out.println("영어점수를 입력하세요");
-			student.egl = sc.nextInt();
+			student.setEgl(sc.nextInt());;
 			System.out.println("수학점수를 입력하세요");
-			student.math = sc.nextInt();
+			student.setMath(sc.nextInt());
 			student.setTotal();
-			student.setAvg();
 			}
 			return students;
 	}
