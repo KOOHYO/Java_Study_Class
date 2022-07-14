@@ -9,30 +9,39 @@ public class StudentService {
 		sc = new Scanner(System.in);
 	}
 	
+	//removeStudent
+	//학생들의 정보를 받아서
+	//삭제하려는 학생의 번호를 입력 받음
+	//학생의 번호와 일치하는 학생을 삭제
+	//남은 학생들의 정보를 리턴
+	
 	//addStudent (5번 누르면 이 메서드가 호출됨)
 	//학생들의 정보를 받아서 (기존 모든 정보를 받아서)
 	//학생 한명 추가
 	//학생정보들을 리턴
 	public Student [] addStudent(Student [] students) {
 		
-		Student [] studentscp = new Student[students.length+1];
-		Student student = new Student();
-		
-		for(int i=0; i<studentscp.length; i++) {
-			System.out.println("추가할 이름을 입력하세요");
-			student.setName(sc.next());
-			System.out.println("추가할 번호를 입력하세요");
-			student.setNum(sc.nextInt());
-			System.out.println("추가할 국어점수를 입력하세요");
-			student.setKor(sc.nextInt());
-			System.out.println("추가할 영어점수를 입력하세요");
-			student.setEgl(sc.nextInt());
-			System.out.println("추가할 수학점수를 입력하세요");
-			student.setMath(sc.nextInt());
-			student.setTotal();
-			studentscp[i]=student;
+		Student [] newstudents = new Student[students.length+1];
+		for(int i=0; i<students.length; i++ ) {
+			newstudents[i]=students[i];
 		}
-		return studentscp;
+		
+		Student newstudent = new Student();
+			System.out.println("추가할 이름을 입력하세요");
+			newstudent.setName(sc.next());
+			System.out.println("추가할 번호를 입력하세요");
+			newstudent.setNum(sc.nextInt());
+			System.out.println("추가할 국어점수를 입력하세요");
+			newstudent.setKor(sc.nextInt());
+			System.out.println("추가할 영어점수를 입력하세요");
+			newstudent.setEgl(sc.nextInt());
+			System.out.println("추가할 수학점수를 입력하세요");
+			newstudent.setMath(sc.nextInt());
+			newstudent.setTotal();
+			
+			newstudents[students.length] = newstudent;
+
+		return newstudents;
 		
 	}
 	
@@ -79,6 +88,8 @@ public class StudentService {
 			System.out.println("수학점수를 입력하세요");
 			student.setMath(sc.nextInt());
 			student.setTotal();
+			
+			students[i]=student;
 			}
 			return students;
 	}

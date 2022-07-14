@@ -65,7 +65,7 @@ public class StudentController {
 				break;
 			case 5 :
 				System.out.println("5");
-				studentservice.addStudent(students);
+				students = studentservice.addStudent(students);
 				break;
 			case 6 :
 				System.out.println("6");
