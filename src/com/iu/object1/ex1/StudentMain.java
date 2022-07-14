@@ -9,7 +9,7 @@ public class StudentMain {
 		Scanner sc = new Scanner(System.in);
 		//StudentContloller의 start 메서드 호출
 		StudentController stc = new StudentController();
-		stc.stat();
+		stc.start();
 		
 		System.out.println("프로그램 종료");
 	}
